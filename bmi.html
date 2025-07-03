@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BMI Calculator</title>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2921/2921222.png" type="image/x-icon"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"/>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+   <script src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <i class="bi bi-calculator icon"></i>
+    <h1 class="heading">BMI Calculator</h1>
+    <p class="description">Enter Your height and Width below to calculate Your Body Mass Index(BMI)</p>
+    <form id="bmi-form">
+      <!-- Weight -->
+          <div class="form-group relative">
+            <label for="weight">Weight</label>
+            <input type="number" id="weight" class="form-control pr-12 pl-2" placeholder="e.g." />
+            <span class="unit-inside-input">kg</span>
+          </div>
+
+          <!-- Height -->
+          <div class="form-group relative">
+            <label for="height">Height</label>
+            <input type="number" id="height" class="form-control pr-12 pl-2" placeholder="e.g." required />
+            <span class="unit-inside-input">cm</span>
+          </div>
+
+      <div class="button">
+        <button type="submit" class="btn btn-primary buttonn">Calculate BMI</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="hidden flex flex-col items-center justify-center border-2 w-fit p-3 mx-auto m-2 border-gray-300 rounded-lg" id="result-container">
+    <h2 class="text-3xl font-bold">Your BMI Result</h2>
+    <p id="bmi-result" class="font-bold"></p>
+    <p id="bmi-category" class="font-bold"></p>
+    <div class="text-gray-500 d-flex flex-col items-center justify-center">
+      <p>Underweight: < 18.5 </p>
+      <p>Normal weight: 18.5 - 24.9</p>
+      <p>Overweight: 25 - 29.9</p>
+      <p>Obesity: 30 or greater</p>
+    </div>
+
+    <!-- ✅ BMI Progress Bar -->
+    <div class="w-full max-w-xs sm:max-w-md mt-4">
+      <div class="relative bg-gray-200 h-6 rounded-full overflow-hidden">
+        <div id="bmi-progress"
+          class="absolute top-0 left-0 h-6 text-white text-sm text-center whitespace-nowrap transition-all duration-300"
+          style="width: 0%;">
+        </div>
+      </div>
+      <div class="flex justify-between text-xs mt-1 text-gray-500 px-1">
+        <span>Underweight</span>
+        <span>Normal</span>
+        <span>Overweight</span>
+        <span>Obese</span>
+      </div>
+    </div>
+  </div>
+
+  <p id="warning" class="p-3 m-3 font-caveat text-center"></p>
+ 
+
+<div class="hidden justify-center m-2" id="reset-container">
+  <button id="reset-button" class="btn btn-primary">Reset</button>
+</div>
+
+    
+  </body>
+</html>
